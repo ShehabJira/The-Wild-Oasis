@@ -146,7 +146,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 				{/* type is an HTML attribute! */}
 				<Button
 					variation="secondary"
-					type="reset"
+					type="reset" // prevent the button to reload, cuz any button click will submit the form except the reset type.
 					onClick={() => onCloseModal?.()}
 					//Only execute it if this prop exists, as this form may be used anywhere else outside the modal. In turn, there is no any Modal to be closed.
 				>

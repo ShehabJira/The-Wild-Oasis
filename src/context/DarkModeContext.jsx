@@ -14,17 +14,12 @@ function DarkModeProvider({ children }) {
 		setIsDarkMode((isDark) => !isDark);
 	}
 
-	return (
-		<DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-			{children}
-		</DarkModeContext.Provider>
-	);
+	return <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>{children}</DarkModeContext.Provider>;
 }
 
 function useDarkMode() {
 	const context = useContext(DarkModeContext);
-	if (context === undefined)
-		throw new Error("DarkModeContext was used outside of DarkModeProvider");
+	if (context === undefined) throw new Error("DarkModeContext was used outside of DarkModeProvider");
 	return context;
 }
 
